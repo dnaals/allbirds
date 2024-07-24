@@ -24,3 +24,5 @@ let swiper = new Swiper(".mySwiper", {
   });
 
 
+
+  console.log('되고있나ㅁ??????????')
