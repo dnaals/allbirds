@@ -1,0 +1,527 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+body {
+    font:normal 16px "Noto Sans KR", sans-serif;
+    color:var(--allbirds_black);
+}
+h1, h2, h3, h4, h5, h6 {font-size:1em;}
+h1, h2, h3, h4, h5, h6, div, p, dl, body, dt, dd, ul, ol, li, form, fieldset, blockquote, address, table, thead, tbody, tfoot, tr, td, caption {
+    margin:0;
+    padding:0;
+}
+li {list-style:none;}
+a {color:var(--allbirds_black); text-decoration: none;}
+
+:root{
+    --allbirds_black:#212A2F;
+    --allbirds_white:#FFFFFF;
+    --allbirds_gray30:#D3D4D5;
+    --allbirds_gray70:#4D5559;
+}
+
+/* 2. 재료준비 : 색상, 글자, 제목 */
+.a_title1{
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 33px;
+}
+.a_title2{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+}
+/* 3. 부품준비 : */
+  /* 1) 버튼 */
+button.big {
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 46px;
+    letter-spacing: 2px;
+    border-radius: 2px;
+}
+
+button.big.black {
+    background-color: var(--allbirds_black);
+    border: 2px solid var(--allbirds_black);
+    color: var(--allbirds_white);
+}
+
+button.big.black:hover {
+    background-color: var(--allbirds_white);
+    color: var(--allbirds_black);
+    cursor: pointer;
+}
+
+button.big.white {
+    background-color: var(--allbirds_white);
+    border: 2px solid var(--allbirds_white);
+    color: var(--allbirds_black);
+}
+
+button.big.white:hover {
+    background-color: var(--allbirds_black);
+    border: 2px solid var(--allbirds_black);
+    color: var(--allbirds_white);
+
+    cursor: pointer;
+}
+  /* 2) 헤더 */
+    header{
+        background-color: var(--allbirds_white);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        padding: 0 30px;
+        position: fixed;
+        top:0;
+        left:0;
+        right:0;
+        z-index: 10;
+    }
+    header>.logo{
+        order:1;
+    }
+    header>.logo>a{
+        display:block;
+        width:120px;
+        height:38px;
+        font-size: 0;
+        background: url('../images/allbirds-logo.svg') no-repeat ;
+    }
+    header>.main{
+        order:0;
+    }
+    header>.main>.menu_btn{
+        display:block;
+    }
+    header>.main>.menu_btn{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 0;
+        width:23px;
+        height:18px;
+    }
+    header>.main>.menu_btn::before{
+        content: '';
+        background-color: var(--allbirds_black);
+        height:2px;
+    }
+    header>.main>.menu_btn>span{
+        background-color: var(--allbirds_black);
+        height:2px;
+    }
+    header>.main>.menu_btn::after{
+        content: '';
+        background-color: var(--allbirds_black);
+        height:2px;
+    }
+    header>nav{
+        font-size: 12px;
+        font-weight: 700;
+    }
+    header>.main>ul{
+        display:none;
+    }
+    header>.main>ul>li + li{
+        margin-left: 37px;
+    }
+    header>.utill{
+        order:2;
+    }
+    header>.utill>ul{
+        display:flex;
+        align-items: center;
+    }
+    header>.utill>ul>.text{
+        display:none;
+    }
+    header>.utill>ul>.text +.text{
+        margin-left: 37px;
+    }
+
+    header>.utill>ul>.help span , header>.utill>ul>.cart span{
+        font-size: 0;
+    }
+    header>.utill>ul>.help{
+        display:none;
+        margin:0 18px;
+    }
+    header>.utill>ul>.help>a{
+        display:block;
+        width:25px;
+        height:25px;
+        background: url('../images/icon_help.svg');
+    }
+    header>.utill>ul>.cart{
+        position: relative;
+    }
+    header>.utill>ul>.cart>a{
+        display:block;
+        width:35px;
+        height:31px;
+        background: url('../images/icon_cart.svg');
+    }
+    header>.utill>ul>.cart>a>b{
+        position: absolute;
+        top:5px;
+        left:50%;
+        transform: translate(-35%,0);
+    }
+  /* 3) 비주얼 */
+    main>.visual{
+        height:100vh;
+        position: relative;
+    }
+    main>.visual>picture>img{
+        width:100%;
+        height:100%;
+        object-fit: cover;
+    }
+    main>.visual>.description{
+        position: absolute;
+        bottom:30px;
+        left:30px;
+        right:30px;
+    }
+    main>.visual>.description>h2{
+        font-size: 32px;
+        color:var(--allbirds_white);
+    }
+    main>.visual>.description>p{
+        color:var(--allbirds_white);
+        font-weight: 700;
+        margin:12px 0 20px;
+    }
+    main>.visual>.description>.btn_area{
+        font-size: 0;
+        display:flex;
+        flex-direction: column;
+        gap:20px;
+    }
+    main>.visual>.description>.btn_area>button{
+        max-width: 300px;
+        height:50px;
+    }
+    
+  /* 4) 제품패턴 */
+    main>.list{
+        padding:30px;
+    }
+    main>.collection>.a_title1{
+        text-align: center;
+    }
+    main>.list>.a_title1{
+        margin-bottom:24px;
+    }
+    main>.list>ul>li{
+        box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+        background-color: var(--allbirds_white);
+    }
+    
+    
+    main>.list>ul>li>img{
+        width:100%;
+    }
+    main>.list>ul>li>.desc{
+        padding:18px;
+    }
+    main>.collection>ul>li>.desc>h3{
+        font-size: 18px;
+        border-bottom: 1px solid var(--allbirds_gray30);
+        padding-bottom: 9px;
+    }
+    main>.etc>ul>li>.desc>.a_title2{
+        font-size: 22px;
+    }
+    main>.collection>ul>li>.desc>p{
+        background: url('../images/icon_tree.png') no-repeat 0 0/30px;
+        padding-left: 30px;
+        
+    }
+    main>.list>ul>li>.desc>p{
+        font-size: 16px;
+        margin-top: 9px;
+        line-height: 30px;
+    }
+    main>.list>ul>li+li{
+        margin-left: 24px;
+    }
+    
+    
+  /* 5) 설명패턴 */
+  main>.about{
+    text-align: center;
+    
+  }
+  main>.about>picture{
+    display:block;
+    height:542px;
+  }
+    main>.about>picture>img{
+        object-fit: cover;
+        width:100%;
+        height:100%;
+    }
+    main>.about>.a_title1{
+        margin-top:60px;
+    }
+    main>.about>.a_title2{
+        margin:30px;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 0 24px;
+        max-width: 666px;
+    }
+    main>.about>.btn_area{
+        font-size: 0;
+        display:flex;
+        justify-content: center;
+    }
+    main>.about>.btn_area>button{
+        width:200px;
+    }
+    main>.about>.two>button{
+        width:247px;
+    }
+    main>.about>.btn_area>button+button{
+        margin-left:10px;
+    }
+    aside{
+        padding:50px 24px 30px 24px;
+        text-align: center;
+        background-color: #f8f7f5;
+    }
+    aside>.a_title1{
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+    aside>.a_title2{
+        font-size: 16px;
+        font-weight: 400;
+        margin:30px 0;
+    }
+    aside>.input_area{
+        display:flex;
+        flex-direction: column;
+    }
+    aside>.input_area>input{
+        box-sizing: border-box;
+        height:50px;
+        padding:15px;
+        border:none;
+        border-bottom: 2px solid var(--allbirds_black);
+        margin-bottom: 8px;
+    }
+    aside>.input_area>button{
+        height:50px;
+    }
+    aside>.input_area>input:focus{
+        border: 2px solid var(--allbirds_black);
+        outline: none;
+    }
+    aside>.input_area>input::placeholder{
+        color:var(--allbirds_gray30);
+        font-size: 16px;
+        font-weight: 700;
+    }
+    aside>.noti{
+        margin:30px auto;
+        width:270px;
+        font-size: 14px;
+        color:#999;
+    }
+  /* 6) aside */
+  /* 7) footer */
+    footer{
+        background-color: var(--allbirds_black);
+        color:var(--allbirds_white);
+        padding:72px 24px 100px;
+        text-align: center;
+    }
+    footer h3{
+        font-size: 14px;
+    }
+    footer a,footer p{
+        color:var(--allbirds_white);
+        font-size: 12px;
+    }
+    footer>.f_link{
+        display:flex;
+        flex-direction: column;
+    }
+    footer>.f_link div+div{
+        margin-top: 40px;
+    }
+    footer>.f_link a{
+        display:block;
+        margin-top: 20px;
+    }
+    footer>.f_info{
+        margin-top: 60px;
+    }
+    footer>.f_info>.sns{
+        font-size: 0;
+    }
+    footer>.f_info>.sns>p{
+        margin : 20px 0;
+    }
+    footer>.f_info>.sns>a{
+        display:inline-block;
+        width:20px;
+        height:20px;
+        
+    }
+    footer>.f_info>.sns>a+a{
+        margin-left: 20px;
+    }
+    footer>.f_info>.sns>a>img{
+        width:100%;
+        height:100%;
+    }
+    footer>.f_info>.certified{
+        margin: 40px 0;
+    }
+    footer>.f_info>.country{
+        font-size: 0;
+    }
+    footer>.f_info>.country>a+a{
+        margin-left: 25px;
+    }
+    footer>.f_info>.country>a{
+        display: inline-block;
+        width:37px;
+        height:22px;
+    }
+    footer>.f_info>.country>a>img{
+        width:100%;
+        height:100%;
+    }
+
+
+    footer>.copyright{
+        margin-top: 40px;
+    }
+    footer>.copyright>p:nth-of-type(1){
+        margin-bottom: 40px;
+    }
+
+    /* 스와이퍼 */
+    .swiper {
+        height: 100%;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+@media screen and (min-width:720px){
+    body{
+    }
+    main>.visual>.description{
+        bottom:70px;
+    }
+    main>.visual>.description>h2{
+        font-size: 40px;
+    }
+    main>.visual>.description>.btn_area{
+        flex-direction: row;
+    }
+    main>.visual>.description>.btn_area>button{
+        width:200px;
+    }
+    main>.list>.a_title1{
+        font-size: 28px;
+    }
+    main>.collection>ul>li>.desc>h3{
+        font-size: 22px;
+    }
+    main>.list>ul{
+        display:flex;
+    }
+    
+    main>.about>.a_title2{
+        margin:30px auto;
+    }
+    aside>.input_area{
+        flex-direction: row;
+        justify-content: center;
+    }
+    aside>.input_area>input{
+        width:500px;
+        margin-right: 8px;
+    }
+    aside>.input_area>button{
+        /* width:108px; */
+        padding:0 20px;
+    }
+    footer{
+        text-align: left;
+    }
+    footer>.f_link{
+        flex-direction: row;
+        align-items: start;
+
+    }
+    footer>.f_link div,footer>.f_info div{
+        width:25%;
+    }
+    footer>.f_link div+div{
+        margin-top: 0;
+    }
+    footer>.f_info{
+        display:flex;
+        justify-content: space-between;
+    }
+    footer>.f_info>.certified{
+        margin:0;
+        text-align: center;
+    }
+    footer>.f_info>.country{
+        width:50%;
+    }
+    footer>.copyright{
+        text-align: center;
+    }
+
+   
+    
+}
+@media screen and (min-width:990px){
+    body{
+    }
+    main>.visual>.description>h2{
+        font-size: 48px;
+    }
+    
+    main>.list>.a_title1{
+        font-size: 32px;
+    }
+    
+}
+@media screen and (min-width:1200px){
+    body{
+    }
+
+    header>.main>.menu_btn{
+        display:none;
+    }
+    header>.main>ul{
+        display:flex;
+    }
+    header>.utill>ul>.text{
+        display:list-item;
+    }
+    header>.utill>ul>.help{
+        display:list-item;
+    }
+    main>.list{
+        width:1200px;
+        margin:0 auto;
+    }
+}
