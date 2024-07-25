@@ -1,4 +1,4 @@
-
+//스와이퍼
     let swiper = new Swiper(".mySwiper", {
     
         pagination: {
@@ -21,5 +21,17 @@
         }
       });
 
+const backBG = document.querySelector('.back_dark');
+const cartEl = document.querySelector('#cart_btn');
+const closeBtn = document.querySelector('.close_btn');
 
 
+
+cartEl.addEventListener('click',function(e){
+    e.preventDefault();
+    console.log('ㅁㄴㅇ')
+    backBG.style.display = 'block';
+})
+closeBtn.addEventListener('click',function(){
+    backBG.style.display = 'none';
+})
