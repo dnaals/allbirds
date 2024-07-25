@@ -246,9 +246,7 @@ button.big.white:hover {
         margin-top: 9px;
         line-height: 30px;
     }
-    main>.list>ul>li+li{
-        margin-left: 24px;
-    }
+  
     
     
   /* 5) 설명패턴 */
