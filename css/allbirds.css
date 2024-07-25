@@ -63,8 +63,19 @@ button.big.white:hover {
     background-color: var(--allbirds_black);
     border: 2px solid var(--allbirds_black);
     color: var(--allbirds_white);
-
     cursor: pointer;
+}
+button.close_btn{
+        position: absolute;
+        top:20px;
+        left:24px;
+        width:16px;
+        height:16px;
+        font-size: 0;
+        border:none;
+        background-color: var(--allbirds_white);
+        background: url('../images/close.png') no-repeat center center/cover;
+        cursor: pointer;
 }
   /* 2) 헤더 */
     header{
@@ -80,23 +91,23 @@ button.big.white:hover {
         right:0;
         z-index: 10;
     }
-    header>.logo{
+    header .logo{
         order:1;
     }
-    header>.logo>a{
+    header .logo>a{
         display:block;
         width:120px;
         height:38px;
         font-size: 0;
         background: url('../images/allbirds-logo.svg') no-repeat ;
     }
-    header>.main{
+    header>.menu{
         order:0;
     }
-    header>.main>.menu_btn{
+    header>.menu>.menu_btn{
         display:block;
     }
-    header>.main>.menu_btn{
+    header>.menu>.menu_btn{
         display:flex;
         flex-direction: column;
         justify-content: space-between;
@@ -104,28 +115,57 @@ button.big.white:hover {
         width:23px;
         height:18px;
     }
-    header>.main>.menu_btn::before{
+    header>.menu>.menu_btn::before{
         content: '';
         background-color: var(--allbirds_black);
         height:2px;
     }
-    header>.main>.menu_btn>span{
+    header>.menu>.menu_btn>span{
         background-color: var(--allbirds_black);
         height:2px;
     }
-    header>.main>.menu_btn::after{
+    header>.menu>.menu_btn::after{
         content: '';
         background-color: var(--allbirds_black);
         height:2px;
+    }
+    header>.menu>.mobile_menu{
+        display:none;
+        position: fixed;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        background-color: white;
+        padding-top:90px;
+        z-index: 10;
+    }
+    header>.menu>.mobile_menu>.logo{
+        position: absolute;
+        top:20px;
+        left:50%;
+        transform: translate(-50%, 0);
+    }
+    header>.menu>.mobile_menu>ul>li{
+        padding:10px 20px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    header>.menu>.mobile_menu>ul>li:nth-of-type(4){
+        color:#ad1f00;
+    }
+    header>.menu>.mobile_menu>.close_btn{
+        left:90%;
+        
     }
     header>nav{
         font-size: 12px;
         font-weight: 700;
     }
-    header>.main>ul{
+    header>.menu>ul{
         display:none;
     }
-    header>.main>ul>li + li{
+    header>.menu>ul>li + li{
         margin-left: 37px;
     }
     header>.utill{
@@ -192,19 +232,7 @@ button.big.white:hover {
         width:100%;
         padding:24px 20px 20px;
     }
-    header>.utill>ul>.back_dark>.cart_detail>.close_btn{
-        position: absolute;
-        top:20px;
-        left:24px;
-        height:0;
-        width:16px;
-        height:16px;
-        font-size: 0;
-        border:none;
-        background-color: var(--allbirds_white);
-        background: url('../images/close.png') no-repeat center center/cover;
-        cursor: pointer;
-    }
+
     header>.utill>ul>.back_dark>.cart_detail>.text_area{
         margin-top: 0.5rem;
         display:flex;
@@ -215,7 +243,7 @@ button.big.white:hover {
     header>.utill>ul>.back_dark>.cart_detail>p{
         font-size: 16px;
     }
-    header>.utill>ul>.back_dark>.cart_detail>button{
+    header>.utill>ul>.back_dark>.cart_detail>.big{
         border:2px solid black;
         width:256px;
         height:52px;
@@ -546,6 +574,9 @@ button.big.white:hover {
 @media screen and (min-width:990px){
     body{
     }
+    header>.menu>.mobile_menu{
+        display:none;
+    }
     main>.visual>.description>h2{
         font-size: 48px;
     }
@@ -562,10 +593,10 @@ button.big.white:hover {
     body{
     }
 
-    header>.main>.menu_btn{
+    header>.menu>.menu_btn{
         display:none;
     }
-    header>.main>ul{
+    header>.menu>ul{
         display:flex;
     }
     header>.utill>ul>.text{
