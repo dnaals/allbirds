@@ -1,6 +1,4 @@
 
-document.addEventListener('DOMContentLoaded', function() {
-
     let swiper = new Swiper(".mySwiper", {
     
         pagination: {
@@ -10,11 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
         breakpoints: {
             0:{
                 slidesPerView: 1,
-                spaceBetween: 0,
+                spaceBetween: 10,
             },
             720: {
                 slidesPerView: 2,
-                spaceBetween: 0,
+                spaceBetween: 30,
             },
             990: {
                 slidesPerView: 3,
@@ -23,6 +21,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
 
-});
 
 
