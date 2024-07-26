@@ -150,13 +150,15 @@ button.close_btn{
         padding:10px 20px;
         font-size: 20px;
         cursor: pointer;
+        width:fit-content;
+        
     }
     header>.menu>.mobile_menu>ul>li:nth-of-type(4){
         color:#ad1f00;
     }
     header>.menu>.mobile_menu>.close_btn{
         left:90%;
-        
+        top:30px;
     }
     header>nav{
         font-size: 12px;
@@ -500,8 +502,6 @@ button.close_btn{
     }
 
 @media screen and (min-width:720px){
-    body{
-    }
     main>.visual>.description{
         bottom:70px;
     }
@@ -572,8 +572,6 @@ button.close_btn{
     
 }
 @media screen and (min-width:990px){
-    body{
-    }
     header>.menu>.mobile_menu{
         display:none;
     }
@@ -590,8 +588,6 @@ button.close_btn{
     
 }
 @media screen and (min-width:1200px){
-    body{
-    }
 
     header>.menu>.menu_btn{
         display:none;

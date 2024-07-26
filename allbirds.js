@@ -27,6 +27,7 @@ const cartEl = document.querySelector('#cart_btn');
 const cartCloseBtn = document.querySelector('.cart_detail>.close_btn');
 const mobileBtn = document.querySelector('.menu_btn');
 const mobileMenuEl = document.querySelector('.mobile_menu');
+const mobileCloseBtn = document.querySelector('.mobile_menu>.close_btn');
 backBG.addEventListener('click',function(e){
     if(!cartDetail.contains(e.target)){
         backBG.style.display = 'none';
@@ -42,7 +43,10 @@ cartCloseBtn.addEventListener('click',function(){
     backBG.style.display = 'none';
 })
 
-// mobileBtn.addEventListener('click',function(e){
-//     e.preventDefault();
-//     mobileMenuEl.style.display='block';
-// })
+mobileBtn.addEventListener('click',function(e){
+    e.preventDefault();
+    mobileMenuEl.style.display='block';
+})
+mobileCloseBtn.addEventListener('click',function(){
+   mobileMenuEl.style.display='none';
+})
