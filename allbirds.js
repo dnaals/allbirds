@@ -24,11 +24,11 @@
 const backBG = document.querySelector('.back_dark');
 const cartDetail = document.querySelector('.cart_detail');
 const cartEl = document.querySelector('#cart_btn');
-const cartCloseBtn = document.querySelector('.utill>.close_btn');
+const cartCloseBtn = document.querySelector('.cart_detail>.close_btn');
 const mobileBtn = document.querySelector('.menu_btn');
 const mobileMenuEl = document.querySelector('.mobile_menu');
 backBG.addEventListener('click',function(e){
-    if(e.target !=cartDetail){
+    if(!cartDetail.contains(e.target)){
         backBG.style.display = 'none';
     }
 })
@@ -38,10 +38,9 @@ cartEl.addEventListener('click',function(e){
     backBG.style.display = 'block';
 })
 
-// cartCloseBtn.addEventListener('click',function(){
-//     console.log('aa')
-//     backBG.style.display = 'none';
-// })
+cartCloseBtn.addEventListener('click',function(){
+    backBG.style.display = 'none';
+})
 
 // mobileBtn.addEventListener('click',function(e){
 //     e.preventDefault();
